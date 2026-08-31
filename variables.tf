@@ -231,6 +231,19 @@ variable "cf_allowed_methods" {
   }
 }
 
+variable "cf_cached_methods" {
+  type        = list(string)
+  description = "List of HTTP methods for which CloudFront caches responses ('GET', 'HEAD', or 'GET', 'HEAD', 'OPTIONS')."
+  default     = ["GET", "HEAD", "OPTIONS"]
+  validation {
+    condition = alltrue([
+      for method in var.cf_cached_methods :
+      contains(["GET", "HEAD", "OPTIONS"], method)
+    ])
+    error_message = "Invalid HTTP method for cached_methods. Valid values are a combination of: 'GET', 'HEAD', 'OPTIONS'."
+  }
+}
+
 variable "cf_cache_policy_id" {
   type        = string
   description = "Unique identifier of the AWS Managed Cache Policy or custom cache policy attached to the default behavior. Defaults to CachingOptimized (4135ea2d-6df8-44a3-9df3-4b5a84be39ad)."

@@ -8,3 +8,7 @@
 
 - Added proper README.md
 - Fixed descriptions
+
+## [v1.2] (2026-07-27)
+
+- Support for two different lists for cached and allowed methods

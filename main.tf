@@ -89,7 +89,7 @@ resource "aws_cloudfront_distribution" "vss" {
 
   default_cache_behavior {
     allowed_methods = var.cf_allowed_methods
-    cached_methods  = var.cf_allowed_methods
+    cached_methods  = var.cf_cached_methods
 
     target_origin_id = var.cf_source_domain
 
