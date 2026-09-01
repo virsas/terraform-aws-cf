@@ -94,6 +94,7 @@ resource "aws_cloudfront_distribution" "vss" {
     target_origin_id = var.cf_source_domain
 
     cache_policy_id = var.cf_cache_policy_id
+    origin_request_policy_id = var.cf_origin_request_policy_id
 
     compress = var.cf_compress
 

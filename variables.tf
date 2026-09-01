@@ -250,6 +250,12 @@ variable "cf_cache_policy_id" {
   default     = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad"
 }
 
+variable "cf_origin_request_policy_id" {
+  description = "The ID of the CloudFront Origin Request Policy"
+  type        = string
+  default     = null
+}
+
 variable "cf_compress" {
   type        = bool
   description = "Controls whether CloudFront automatically compresses web assets for requests that include 'Accept-Encoding: gzip, deflate'."
